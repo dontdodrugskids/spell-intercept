@@ -1,1 +1,1 @@
-# spell-intercept
+# Spell Intercept
