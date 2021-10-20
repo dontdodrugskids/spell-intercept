@@ -55,7 +55,7 @@ jobs:
           d1=`date +%Y-%m-%d`
           d2=`date +%Y%m%d%H%M`
           scrapy crawl princess-connect -O princess-connect-news-$d1.json
-          aws s3 cp princess-connect-news-$d1.json ${{S3}}/princess-connect-news/
+          aws s3 cp princess-connect-news-$d1.json ${{secrets.S3}}/princess-connect-news/
 
           scrapy crawl bd-ssrd -O bd-ssrd-$d2.json
-          aws s3 cp bd-ssrd-$d2.json ${{S3}}/bd-ssrd-news/
+          aws s3 cp bd-ssrd-$d2.json ${{secrets.S3}}/bd-ssrd-news/
