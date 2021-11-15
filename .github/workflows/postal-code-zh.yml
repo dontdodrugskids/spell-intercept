@@ -1,10 +1,12 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Python application - News
+name: Python application - Postal Code (CN)
 
 on:
   schedule:
-    - cron: 0,30 * * * *
+    - cron: 32 12 * * *
+  push:
+    branches: [ $default-branch ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -48,11 +50,6 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           cd eyes/
-          d1=`date +%Y-%m-%d`
-          d2=`date +%Y%m%d%H%M`
-
-          ${{secrets.CMD}} princess-connect -O princess-connect-news-$d1.json
-          aws s3 cp princess-connect-news-$d1.json ${{secrets.S3}}/princess-connect-news/
-
-          ${{secrets.CMD}} bd-ssrd -O bd-ssrd-$d2.json
-          aws s3 cp bd-ssrd-$d2.json ${{secrets.S3}}/bd-ssrd-news/
+          d=`date +%Y-%m-%d`
+          ${{secrets.CMD}} postal-code-zh -O zh-$d.json
+          aws s3 cp zh-$d.json ${{ secrets.S3}}/postal-code/
