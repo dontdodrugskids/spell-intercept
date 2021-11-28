@@ -4,9 +4,10 @@ name: Python application - Postal Code (ZH)
 
 on:
 #  schedule:
-#    - cron: 32 12 * * *
+#    - cron: 32 12 1 * *
   push:
-    branches: [ $default-branch ]
+    branches:
+      - main
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
