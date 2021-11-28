@@ -20,10 +20,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Check-out Hyperthymesia
+      - name: Check-out Repo
         uses: actions/checkout@master
         with:
-          repository: Index/hyperthymesia
+          repository: ${{ secrets.repo }}
           token: ${{ secrets.htoken }}
 
       - name: Set up Python 3.9
