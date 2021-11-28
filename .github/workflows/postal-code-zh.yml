@@ -3,8 +3,8 @@
 name: Python application - Postal Code (ZH)
 
 on:
-  schedule:
-    - cron: 32 12 * * *
+#  schedule:
+#    - cron: 32 12 * * *
   push:
     branches: [ $default-branch ]
 
