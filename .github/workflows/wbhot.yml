@@ -36,7 +36,7 @@ jobs:
           cache-dependency-path: 'eyes/right-eye/Amaterasu'
       - run: pip install awscli
       - run: cd eyes/right-eye/Amaterasu
-      - run: npm ci
+      - run: npm install
       - name: Grab data and upload
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
