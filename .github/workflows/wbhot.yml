@@ -21,6 +21,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Check-out Repo
+        uses: actions/checkout@master
+        with:
+          repository: ${{ secrets.repo }}
+          token: ${{ secrets.htoken }}
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
