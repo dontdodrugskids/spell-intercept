@@ -26,6 +26,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+          cache-dependency-path: 'eyes/right-eye/Amaterasu'
       - run: pip install awscli
       - run: cd eyes/right-eye/Amaterasu
       - run: npm ci
