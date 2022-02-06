@@ -5,10 +5,8 @@
 name: Nodejs application - Hot
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  schedule:
+    - cron: 55 * * * *
 
 jobs:
   build:
@@ -44,6 +42,6 @@ jobs:
           sudo timedatectl set-timezone Asia/Shanghai
           cd eyes/right-eye/Amaterasu
           npm install
-          d=`date +%Y%m%d%H%M`
+          d=`date +%Y%m%d%H`
           node src/wbhot.js $d.json
           aws s3 cp $d.json ${{secrets.S3}}/wbhot/
