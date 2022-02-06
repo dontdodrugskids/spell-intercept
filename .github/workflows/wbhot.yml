@@ -46,4 +46,4 @@ jobs:
           npm install
           d=`date +%Y%m%d%H%M`
           node src/wbhot.js $d.json
-          aws s3 cp $d.json ${{secrets.S3}}/webhot/
+          aws s3 cp $d.json ${{secrets.S3}}/wbhot/
